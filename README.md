@@ -1,6 +1,7 @@
 # SIMS_Hospital
 
 Project in Specification and Modeling of Software (SIMS) and Human Computer Interaction (HCI) in Faculty of Technical Sciences in Novi Sad, Serbia
+
 Done by: Mihajlo Maksimovic, RA92/2019
 
 The project is written in C# using WPF.
