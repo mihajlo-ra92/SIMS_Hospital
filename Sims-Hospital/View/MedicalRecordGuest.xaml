@@ -1,0 +1,61 @@
+﻿<Window x:Class="Sims_Hospital.View.MedicalRecordGuest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sims_Hospital.View"
+        mc:Ignorable="d"
+        Title="MedicalRecordGuest" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Margin="0 10" HorizontalAlignment="Center" FontSize="30">
+            Zdravstveni karton - Guest
+        </TextBlock>
+
+        <TextBlock Grid.Row="2" Grid.Column="2" Margin="0 20 5 0" >Umcn</TextBlock>
+
+        <TextBox x:Name="umcnText" Grid.Row="2" Grid.Column="3" 
+                 MinWidth="200" MaxWidth="300" Margin="0 20 0 0" />
+
+        <TextBlock Grid.Row="3" Grid.Column="2" Margin="0 20 5 0">Krvna grupa</TextBlock>
+
+        <ComboBox x:Name="bloodTypeComboBox" Grid.Column="3" HorizontalAlignment="Left" Margin="0 20 0 0" Grid.Row="3" 
+                  VerticalAlignment="Top" Width="120" ItemsSource="{Binding BloodTypeCollection}"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="2" Margin="0 20 5 0">Alergeni</TextBlock>
+
+        <Button x:Name="addAllergiesButton" Grid.Column="3" Grid.Row="5" Margin="20" Click="AddAllergiesButton_Click">Dodaj alergije</Button>
+
+        <Button x:Name="savePatientButton" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="6"
+                Margin="20" Padding="0 10" Click="SavePatientButton_Click">Potvrdi</Button>
+
+        <Label Content="Bolnica &quot;Zdravo&quot;" HorizontalAlignment="Left" Margin="40, 0, 0, 0"  Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+    </Grid>
+</Window>

@@ -1,0 +1,178 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="StrHome">Naslovna</system:String>
+    <system:String x:Key="StrConfirm">Potvrdi</system:String>
+    <system:String x:Key="StrHospitalName">Zdravo bolnica</system:String>
+    <system:String x:Key="StrBookAppointment">Zakaži Termin</system:String>
+    <system:String x:Key="StrMedicines">Lekovi</system:String>
+    <system:String x:Key="StrFreeDays">Slobodni dani</system:String>
+    <system:String x:Key="StrReferPatient">Uputi pacijenta</system:String>
+    <system:String x:Key="StrAccount">Nalog</system:String>
+    <system:String x:Key="StrEnglish">Engleski</system:String>
+    <system:String x:Key="StrSerbian">Srpski</system:String>
+    <system:String x:Key="StrLogOut">Odjavi se</system:String>
+    <system:String x:Key="StrPassword">Šifra</system:String>
+    <system:String x:Key="StrName">Ime</system:String>
+    <system:String x:Key="StrLastName">Prezime</system:String>
+    <system:String x:Key="StrBirthDate">Datum rodjenja</system:String>
+    <system:String x:Key="StrGender">Pol</system:String>
+    <system:String x:Key="StrEdit">Izmeni</system:String>
+    <system:String x:Key="StrDelete">Izbriši</system:String>
+    <system:String x:Key="StrSearchPatient">Pretraga pacijenta</system:String>
+    <system:String x:Key="StrSearchRoom">Pretraga soba</system:String>
+    <system:String x:Key="StrAppointmentDate">Datum termina</system:String>
+    <system:String x:Key="StrAppointmentTime">Vreme termina</system:String>
+    <system:String x:Key="StrAppointmentLenght">Duzina termina (minuti)</system:String>
+    <system:String x:Key="StrAppointmentKind">Vrsta termina</system:String>
+    <system:String x:Key="StrEmergency">Hitan slučaj</system:String>
+    <system:String x:Key="StrRoomSchedule">Uvid u raspored soba</system:String>
+    <system:String x:Key="StrPatientName">Ime pacijenta</system:String>
+    <system:String x:Key="StrRoomName">Ime sobe</system:String>
+    <system:String x:Key="StrRoomKind">Vrsta sobe</system:String>
+    <system:String x:Key="StrSentFreeDayRequests">Poslati zahtevi za slobodne dane</system:String>
+    <system:String x:Key="StrDecisionNote">Obrazloženje odluke</system:String>
+    <system:String x:Key="StrRequestNote">Opis zahteva</system:String>
+    <system:String x:Key="StrNewRequest">Novi zahtev</system:String>
+    <system:String x:Key="StrFrom">Od:</system:String>
+    <system:String x:Key="StrTo">do:</system:String>
+    <system:String x:Key="StrFreeDayNote">Opis pauze</system:String>
+    <system:String x:Key="StrStart">Početak</system:String>
+    <system:String x:Key="StrEnd">Kraj</system:String>
+    <system:String x:Key="StrRoom">Soba</system:String>
+    <system:String x:Key="StrWriteReport">Napiši izveštaj</system:String>
+    <system:String x:Key="StrSendReport">Pošalji izveštaj</system:String>
+    <system:String x:Key="StrMedicineControl">Kontrola lekova</system:String>
+    <system:String x:Key="StrSearchMedicine">Pretraga lekova</system:String>
+    <system:String x:Key="StrMedicineName">Naziv leka</system:String>
+    <system:String x:Key="StrCode">Kod</system:String>
+    <system:String x:Key="StrValidity">Validnost</system:String>
+    <system:String x:Key="StrIngredients">Sastojci</system:String>
+    <system:String x:Key="StrNote">Beleška</system:String>
+    <system:String x:Key="StrInvalidateMedicine">Invaliduj lek</system:String>
+    <system:String x:Key="StrAppointments">Termini</system:String>
+    <system:String x:Key="StrAppointmentType">Vrsta termina</system:String>
+    <system:String x:Key="StrSearchDoctor">Pretraga doktora</system:String>
+    <system:String x:Key="StrDoctorName">Ime doktora</system:String>
+    <system:String x:Key="StrSpecialisation">Specializacija</system:String>
+    <system:String x:Key="StrSearchAppointment">Pretraga termina</system:String>
+    <system:String x:Key="StrMedicalRecords">Zdravstveni kartoni</system:String>
+    <system:String x:Key="StrMedicalRecord">Zdravstevni karton</system:String>
+    <system:String x:Key="StrParentName">Ime roditelja</system:String>
+    <system:String x:Key="StrBloodType">Krvna grupa</system:String>
+    <system:String x:Key="StrAddress">Adresa</system:String>
+    <system:String x:Key="StrAllergies">Alergije</system:String>
+    <system:String x:Key="StrAllergenName">Naziv alergena</system:String>
+    <system:String x:Key="StrEditAppointment">Izmeni termin</system:String>
+    <system:String x:Key="StrReport">Izveštaj</system:String>
+    <system:String x:Key="StrSymptoms">Simptomi</system:String>
+    <system:String x:Key="StrWritePrescription">Napiši recept</system:String>
+    <system:String x:Key="StrMedicine">Lek</system:String>
+    <system:String x:Key="StrTherapyStart">Početak terapije</system:String>
+    <system:String x:Key="StrTimesADay">Koliko puta dnevno uzeti lek</system:String>
+    <system:String x:Key="StrDaysOfTherapy">Koliko dana uzimati lek</system:String>
+    <system:String x:Key="StrDark">Tamno</system:String>
+    <system:String x:Key="StrLight">Svetlo</system:String>
+    <system:String x:Key="StrLogIn">Prijava</system:String>
+    <system:String x:Key="StrUsername">Korisničko ime</system:String>
+
+    <Style TargetType="Image" x:Key="Home">
+        <Setter Property="Margin" Value="-55 1 1 1"/>
+    </Style>
+
+    <Style TargetType="Image" x:Key="Appointment">
+        <Setter Property="Margin" Value="-43 1 1 1"/>
+    </Style>
+
+    <Style TargetType="Image" x:Key="Medicines">
+        <Setter Property="Margin" Value="-62 1 1 1"/>
+    </Style>
+
+    <Style TargetType="Image" x:Key="FreeDays">
+        <Setter Property="Margin" Value="-43 1 1 1"/>
+    </Style>
+
+    <Style TargetType="Image" x:Key="Refer">
+        <Setter Property="Margin" Value="-40 1 1 1"/>
+    </Style>
+
+    <Style TargetType="Image" x:Key="MedRecord">
+        <Setter Property="Margin" Value="-30 1 1 1"/>
+    </Style>
+
+    <Style TargetType="Image" x:Key="Account">
+        <Setter Property="Margin" Value="-64 1 1 1"/>
+    </Style>
+
+    <SolidColorBrush Color="Black" x:Key="ThemeColor"/>
+    <SolidColorBrush Color="White" x:Key="OppositeColor"/>
+
+    <Style x:Key="Button" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="#3D3D3D"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="White" BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Gray"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style TargetType="Label" x:Key="Label">
+        <Setter Property="Foreground" Value="white"/>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="TextBlock">
+        <Setter Property="Foreground" Value="white"/>
+    </Style>
+    <Style TargetType="TextBox" x:Key="TextBox">
+        <Setter Property="Background" Value="#343434"/>
+        <Setter Property="Foreground" Value="white"/>
+    </Style>
+    <Style TargetType="PasswordBox" x:Key="PasswordBox">
+        <Setter Property="Background" Value="#343434"/>
+        <Setter Property="Foreground" Value="white"/>
+    </Style>
+    <Style TargetType="ComboBox" x:Key="ComboBox">
+    </Style>
+    <Style TargetType="StackPanel" x:Key="StackPanel">
+        <Setter Property="Background" Value="#232323"/>
+    </Style>
+    <Style TargetType="CheckBox" x:Key="CheckBox">
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+    <Style TargetType="DataGrid" x:Key="DataGrid">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="#343434"/>
+        <Setter Property="AlternatingRowBackground" Value="#343434"/>
+        <Setter Property="RowBackground" Value="#343434"/>
+    </Style>
+    
+    <!--header for datagrid-->
+    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="Background" Value="#343434" />
+    </Style>
+    
+    <!--selected row of datagrid-->
+    <Style TargetType="{x:Type DataGridCell}">
+        <Style.Triggers>
+            <Trigger Property="DataGridCell.IsSelected" Value="True">
+                <Setter Property="Background" Value="#6F6F6F" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="ListBox" x:Key="ListBox">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="#343434"/>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,16 @@
+﻿<Application x:Class="Sims_Hospital.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Sims_Hospital"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/StringResources.en.xaml" />
+                <ResourceDictionary Source="/StringResources.sr.xaml" />
+                <ResourceDictionary Source="/StringResources.en.dark.xaml" />
+                <ResourceDictionary Source="/StringResources.sr.dark.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,112 @@
+﻿<Page x:Class="Sims_Hospital.View.Pages.DoctorPageAccount"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Sims_Hospital.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="690" d:DesignWidth="800"
+      Title="DoctorPageAccount">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/StringResources.en.xaml" />
+                <ResourceDictionary Source="/StringResources.sr.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="125"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Style="{DynamicResource Label}" Content="{DynamicResource StrAccount}" FontWeight="Bold" FontSize="50" FontFamily="Sylfaen" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Row="0"   Grid.Column="3" Grid.ColumnSpan="3" Margin="0 0 0 0"/>
+
+        <TextBlock Style="{DynamicResource TextBlock}" Text="{DynamicResource StrUsername}" Grid.Row="2" Grid.Column="3" Margin="5, 5, 5, 5"></TextBlock>
+        <TextBlock Style="{DynamicResource TextBlock}" x:Name="UsernameBlock" Grid.Row="2" Grid.Column="4" Margin="5, 5, 5, 5"></TextBlock>
+        <TextBox Style="{DynamicResource TextBox}" x:Name="UsernameBox" Grid.Row="2" Grid.Column="4" Margin="5, 5, 5, 5"></TextBox>
+
+        <TextBlock Style="{DynamicResource TextBlock}" Text="{DynamicResource StrPassword}" Grid.Row="3" Grid.Column="3" Margin="5, 5, 5, 5"></TextBlock>
+        <TextBlock Style="{DynamicResource TextBlock}" x:Name="PasswordBlock" Text="???" Grid.Row="3" Grid.Column="4" Margin="5, 5, 5, 5"></TextBlock>
+        <PasswordBox Style="{DynamicResource PasswordBox}" x:Name="PasswordBox" PasswordChanged="PasswordBox_PasswordChanged" Grid.Row="3" Grid.Column="4" Margin="5, 5, 5, 5"></PasswordBox>
+        <TextBox Style="{DynamicResource TextBox}" x:Name="PasswordTextBox" TextChanged="PasswordTextBox_TextChanged" Grid.Row="3" Grid.Column="4" Margin="5, 5, 5, 5"></TextBox>
+        <Button Style="{DynamicResource Button}" x:Name="showPassword" Click="showPassword_Click" Grid.Row="3" Grid.Column="5" Margin="5, 5, 5, 5">
+            <StackPanel Orientation="Horizontal">
+                <Image HorizontalAlignment="Center" x:Name="showPasswordIcon" VerticalAlignment="Center" Source="/Resources/Images/view.png" Height="15" Width="15"></Image>
+            </StackPanel>
+        </Button>
+
+        <TextBlock Style="{DynamicResource TextBlock}" Grid.Row="4" Grid.Column="3" Margin="5, 5, 5, 5">Email:</TextBlock>
+        <TextBlock Style="{DynamicResource TextBlock}" x:Name="EmailBlock"  Grid.Row="4" Grid.Column="4" Margin="5, 5, 5, 5"></TextBlock>
+        <TextBox Style="{DynamicResource TextBox}" x:Name="EmailBox"  Grid.Row="4" Grid.Column="4" Margin="5, 5, 5, 5"></TextBox>
+
+        <TextBlock Style="{DynamicResource TextBlock}" Text="{DynamicResource StrName}" Grid.Row="5" Grid.Column="3" Margin="5, 5, 5, 5"></TextBlock>
+        <TextBlock Style="{DynamicResource TextBlock}" x:Name="FirstNameBlock"  Grid.Row="5" Grid.Column="4" Margin="5, 5, 5, 5"></TextBlock>
+        <TextBox Style="{DynamicResource TextBox}" x:Name="FirstNameBox"  Grid.Row="5" Grid.Column="4" Margin="5, 5, 5, 5"></TextBox>
+
+        <TextBlock Style="{DynamicResource TextBlock}" Text="{DynamicResource StrLastName}" Grid.Row="6" Grid.Column="3" Margin="5, 5, 5, 5"></TextBlock>
+        <TextBlock Style="{DynamicResource TextBlock}" x:Name="LastNameBlock" Grid.Row="6" Grid.Column="4" Margin="5, 5, 5, 5"></TextBlock>
+        <TextBox Style="{DynamicResource TextBox}" x:Name="LastNameBox" Grid.Row="6" Grid.Column="4" Margin="5, 5, 5, 5"></TextBox>
+
+        <TextBlock Style="{DynamicResource TextBlock}" Text="{DynamicResource StrBirthDate}" Grid.Row="7" Grid.Column="3" Margin="5, 5, 5, 5"></TextBlock>
+        <TextBlock Style="{DynamicResource TextBlock}" x:Name="BrithDateBlock" Grid.Row="7" Grid.Column="4" Margin="5, 5, 5, 5"></TextBlock>
+        <DatePicker x:Name="datePickerBirth" FontSize="9"  Grid.Row="7" Grid.Column="4" Margin="5, 5, 5, 5" />
+
+
+
+
+        <TextBlock Style="{DynamicResource TextBlock}" Text="{DynamicResource StrGender}" Grid.Row="8" Grid.Column="3" Margin="5, 5, 5, 5"></TextBlock>
+        <ComboBox x:Name="sexTypeComboBox" Grid.Column="4" Grid.Row="8" Margin="5, 5, 5, 5" ItemsSource="{Binding SexTypeCollection}"/>
+        <TextBlock Style="{DynamicResource TextBlock}" x:Name="GenderBlock" Grid.Row="8" Grid.Column="4" Margin="5, 5, 5, 5"></TextBlock>
+        <!--<TextBox x:Name="UsernameBox" Text="" Grid.Row="8" Grid.Column="4"></TextBox>-->
+
+        <Button Style="{DynamicResource Button}" x:Name="editAccount" Click="editAccount_Click" Margin="5, 5, 5, 5" Grid.Row="10" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal">
+                <Image HorizontalAlignment="Right" Margin="1, 1, 1, 1" Source="/Resources/Images/edit.png" Height="20" Width="20"></Image>
+                <TextBlock Text="{DynamicResource StrEdit}" HorizontalAlignment="Left" Margin="1, 1, 1, 1"></TextBlock>
+            </StackPanel>
+        </Button>
+
+        <!--<Button x:Name="logOut" Click="logOut_Click"  Margin="5, 5, 5, 5" Grid.Row="2" Grid.RowSpan="2" Grid.Column="7" >
+            <StackPanel Orientation="Horizontal">
+                <TextBlock HorizontalAlignment="Left" Margin="1, 1, 1, 1">Odjavi se</TextBlock>
+                <Image HorizontalAlignment="Right" Margin="1, 1, 1, 1" Source="/Resources/Images/logout.png" Height="20" Width="20"></Image>
+            </StackPanel>
+        </Button>-->
+    </Grid>
+</Page>

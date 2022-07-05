@@ -1,0 +1,57 @@
+﻿<Window x:Class="Sims_Hospital.View.PatientHomePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Closing="OnClose"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sims_Hospital.View"
+        mc:Ignorable="d"
+        Title="PatientHomePage" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Bolnica &quot;Zdravo&quot;" HorizontalAlignment="Center" Margin="0, 0, 0, 0"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>
+
+        <Button x:Name="logoutUser" Grid.Column="4" Grid.Row="0" MaxWidth="100" Click="LogoutUser_Click">Odjava</Button>
+
+
+        <Button x:Name="addAppointmentPatient" Margin="0, 30, 0, 0" Grid.Row="3" Grid.Column="1" Click="AddAppointmentPatient_Click">Zakazivanje pregleda</Button>
+
+        <Button x:Name="RecommendationOfSystem" Margin="0, 30, 0, 0" Grid.Row="3" Grid.Column="2" Click="SystemRecommendation_Click">Preporuka sistema</Button>
+
+        <Button x:Name="editAppointmentPatient" Margin="0, 10, 0, 0" Grid.Row="4" Grid.Column="1" Click="EditAppointmentPatient_Click">Izmena pregleda</Button>
+
+        <Button x:Name="evaluateHospital" Margin="0, 10, 0, 0" Grid.Row="4" Grid.Column="2" Click="evaluateHospital_Click">Oceni bolnicu</Button>
+        
+        <Button x:Name="deleteAppointmentPatient" Margin="0, 10, 0, 0" Grid.Row="5" Grid.Column="1" Click ="DeleteAppointmentPatient_Click">Brisanje pregleda</Button>
+        
+        <Button x:Name="EvaluateAppointment" Margin="0, 10, 0, 0" Grid.Row="5" Grid.Column="2" Click ="EvaluateAppointment_Click">Oceni pregled</Button>
+
+        <ListBox x:Name="appointmentList" ItemsSource="{Binding}"  Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="0 10 0 0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="{Binding Path=StartTime}"/>
+                        <TextBlock Text="{Binding Path=Doctor.NameLastName}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+    </Grid>
+</Window>

@@ -1,0 +1,200 @@
+﻿<Window x:Class="Sims_Hospital.View.AppointmentCreateDoctor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sims_Hospital.View"
+        xmlns:val="clr-namespace:Sims_Hospital.ValidationRules"
+        mc:Ignorable="d"
+        Title="AppointmentCreateDoctor" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <TextBlock Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Margin="0,20,0,0" HorizontalAlignment="Left" FontSize="30" Width="262">
+            Zakazivanje termina
+        </TextBlock>
+        <Button x:Name="logoutUser" Grid.Column="4" Grid.Row="0" MaxWidth="100" Click="LogoutUser_Click">Odjava</Button>
+
+        <TextBlock Grid.Row="2" Grid.Column="2" Margin="0,20,0, 0" Grid.ColumnSpan="2" >Vrsta termina</TextBlock>
+
+        <ComboBox x:Name="appointmentTypeComboBox" Grid.Column="4" HorizontalAlignment="Center" Margin="0,20,0,0" Grid.Row="2" 
+                  VerticalAlignment="Top" Width="120" ItemsSource="{Binding AppointmentTypeCollection}" Height="22"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="2" Margin="0,20,0,0" Grid.ColumnSpan="1" >Datum termina</TextBlock>
+
+        <DatePicker x:Name="datePickerStart" Grid.Row="4" Grid.Column="4" 
+                    MinWidth="200" MaxWidth="300" Margin="0,20,0,0" />
+
+
+
+
+        <TextBlock Grid.Row="6" Grid.Column="2" Margin="0,20,0,0" Grid.ColumnSpan="1">Vreme termina</TextBlock>
+
+        <TextBox Grid.Row="6" Grid.Column="4" HorizontalAlignment="Left"
+                  Width="50" Margin="0,20,0,0" Grid.RowSpan="1">
+            <TextBox.Text>
+                <Binding Path="Hour" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <val:ValidateHour/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                    </Grid>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+
+        <TextBlock Grid.Row="6" Grid.Column="4" Margin="55,20,0,0" Grid.ColumnSpan="1">:</TextBlock>
+
+        <TextBox Grid.Row="6" Grid.Column="4" 
+                 Width="50" Margin="60,20,0,0" Grid.RowSpan="1" HorizontalAlignment="Left">
+            <TextBox.Text>
+                <Binding Path="Minute" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <val:ValidateMinute/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                    </Grid>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+
+
+        <TextBlock Grid.Row="7" Grid.Column="2" Margin="0,20,0,0" Grid.ColumnSpan="1">Trajanje termina (minuti)</TextBlock>
+
+        <TextBox Grid.Row="7" Grid.Column="4" 
+                 MinWidth="100" MaxWidth="300" Margin="0,20,0,0" >
+            <TextBox.Text>
+                <Binding Path="LenMinute" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <val:ValidateMinute/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                    </Grid>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+
+        <!--<TextBlock Grid.Row="8" Grid.Column="2" Margin="0,20,0,0" Grid.RowSpan="1" Grid.ColumnSpan="1" >Soba</TextBlock>
+
+        <TextBox Grid.Row="8" Grid.Column="4" 
+                 MinWidth="200" MaxWidth="300" Margin="0,20,0,0" Grid.RowSpan="1">
+            <TextBox.Text>
+                <Binding Path="RoomName" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <val:ValidateRoom/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                    </Grid>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>-->
+
+        <DataGrid Name="PatientGrid" ItemsSource="{Binding}" IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="Green" Grid.Row="3"  Grid.RowSpan="2" Grid.Column="5"  AlternationCount="2" Margin="0,4,-209,4" SelectionChanged="PatientGrid_SelectionChanged" Grid.ColumnSpan="8">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Patient Name" Width="auto" Binding="{Binding Path=NameLastName}" />
+                <DataGridTextColumn Header="Username" Width="auto" Binding="{Binding Path=Username}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid Name="RoomGrid" ItemsSource="{Binding}" IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="Green" Grid.Row="8"  Grid.RowSpan="2" Grid.Column="5"  AlternationCount="2" Margin="0,4,-209,4">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Room Name" Width="auto" Binding="{Binding Path=RoomName}" />
+                <DataGridTextColumn Header="Room Type" Width="auto" Binding="{Binding Path=RoomType}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="savePatientButton" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="9"
+                Margin="20,20,20,20" Padding="0 10" Click="saveAppointmentButton_Click">Potvrdi</Button>
+
+
+        <Label Content="Bolnica &quot;Zdravo&quot;" HorizontalAlignment="Left" Margin="40,0,0,0" Grid.Column="0" VerticalAlignment="Center" Height="26" Width="98" Grid.ColumnSpan="2"/>
+
+
+    </Grid>
+</Window>

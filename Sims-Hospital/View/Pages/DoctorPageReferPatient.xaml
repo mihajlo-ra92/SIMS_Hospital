@@ -1,0 +1,264 @@
+﻿<Page x:Class="Sims_Hospital.View.DoctorPageReferPatient"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:val="clr-namespace:Sims_Hospital.ValidationRules"
+      xmlns:local="clr-namespace:Sims_Hospital.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="690" d:DesignWidth="800"
+      Title="DoctorPageReferPatient">
+    
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/StringResources.en.xaml" />
+                <ResourceDictionary Source="/StringResources.sr.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="180"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="180"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Style="{DynamicResource TextBlock}" Text="{DynamicResource StrReferPatient}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" FontWeight="Bold" Margin="5, 5, 5, 5"></TextBlock>
+        <TextBlock Style="{DynamicResource TextBlock}" Text="{DynamicResource StrAppointments}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="5, 5, 5, 5"></TextBlock>
+        <TextBox Style="{DynamicResource TextBox}" x:Name="SearchAppointments" TextChanged="SearchAppointments_TextChanged" Grid.Row="1" Grid.Column="12" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"></TextBox>
+        <TextBlock IsHitTestVisible="False" Text="{DynamicResource StrSearchAppointment}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="12" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="{DynamicResource OppositeColor}">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=SearchAppointments}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+
+        <DataGrid Style="{DynamicResource DataGrid}" Name="AppointmentGrid" ItemsSource="{Binding}" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="13" AlternationCount="2" Margin="5,5,5,5" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="150" Binding="{Binding Path=Patient.NameLastName}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource StrPatientName}"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="150" Binding="{Binding Path=Patient.Username}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource StrUsername}"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Email" Width="150" Binding="{Binding Path=Patient.Email}" />
+                <DataGridTextColumn Width="*" Binding="{Binding Path=AppointmentStartDate}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource StrAppointmentDate}"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="100" Binding="{Binding Path=AppointmentStartTime}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource StrAppointmentTime}"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBox Style="{DynamicResource TextBox}" x:Name="SearchDoctors" TextChanged="SearchDoctors_TextChanged" Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="3" Margin="5, 5, 5, 5"></TextBox>
+        <TextBlock IsHitTestVisible="False" Text="{DynamicResource StrSearchDoctor}" VerticalAlignment="Center" Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="{DynamicResource OppositeColor}">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=SearchDoctors}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+
+        <DataGrid Style="{DynamicResource DataGrid}" Name="DoctorGrid" ItemsSource="{Binding}" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="8" AlternationCount="2" SelectedCellsChanged="DoctorGrid_SelectedCellsChanged" Margin="5,5,5,5" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="130" Binding="{Binding Path=NameLastName}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource StrDoctorName}"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="90" Binding="{Binding Path=Username}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource StrUsername}"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Email" Width="*" Binding="{Binding Path=Email}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock Style="{DynamicResource TextBlock}" Text="{DynamicResource StrSpecialisation}" Grid.Row="5" Grid.Column="5" Grid.ColumnSpan="2" Margin="15, 5, 5, 5"></TextBlock>
+
+        <TextBox Style="{DynamicResource TextBox}" x:Name="specialisationTextbox" IsReadOnly="True" Grid.Row="5" Grid.Column="7" Grid.ColumnSpan="2"  Margin="5, 5, 5, 5"></TextBox>
+
+        <TextBlock Style="{DynamicResource TextBlock}" Text="{DynamicResource StrAppointmentType}" Grid.Row="3" Grid.Column="1  " Grid.ColumnSpan="3" Margin="5, 5, 5, 5"></TextBlock>
+
+        <ComboBox Style="{DynamicResource ComboBox}" x:Name="appointmentTypeComboBox" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Margin="5, 5, 5, 5" ItemsSource="{Binding AppointmentTypeCollection}"/>
+
+
+        <TextBox Style="{DynamicResource TextBox}" x:Name="SearchRooms" TextChanged="SearchRooms_TextChanged" Grid.Row="3" Grid.Column="12" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"></TextBox>
+        <TextBlock IsHitTestVisible="False" Text="{DynamicResource StrSearchRoom}" VerticalAlignment="Center" Grid.Row="3" Grid.Column="12" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="{DynamicResource OppositeColor}">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=SearchRooms}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+
+        <DataGrid Style="{DynamicResource DataGrid}" Name="RoomGrid" ItemsSource="{Binding}" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="4" Grid.Column="9" Grid.ColumnSpan="5"  AlternationCount="2" Margin="5, 5, 5, 5">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="140" Binding="{Binding Path=RoomName}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource StrRoomName}"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="*" Binding="{Binding Path=RoomTypeString}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource StrRoomKind}"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Style="{DynamicResource Button}" x:Name="RoomScheduleButton" Click="RoomScheduleButton_Click"  Grid.Row="5" Grid.RowSpan="2" Grid.Column="12" Grid.ColumnSpan="2" Margin="-5, 5, 5, 5">
+            <StackPanel Orientation="Horizontal">
+                <Image HorizontalAlignment="Right" Margin="1, 1, 1, 1" Source="/Resources/Images/insight.png" Height="20" Width="20"></Image>
+                <TextBlock Text="{DynamicResource StrRoomSchedule}" HorizontalAlignment="Left" Margin="1, 1, 1, 1"></TextBlock>
+            </StackPanel>
+        </Button>
+
+
+        <TextBlock Style="{DynamicResource TextBlock}" Text="{DynamicResource StrAppointmentDate}" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"></TextBlock>
+        <DatePicker x:Name="datePickerStart" FontSize="9"  Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Margin="5, 5, 5, 5" />
+
+        <TextBlock Style="{DynamicResource TextBlock}" Text="{DynamicResource StrAppointmentTime}" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"></TextBlock>
+        <TextBox Style="{DynamicResource TextBox}" x:Name="appointmentStartHour" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="1" Margin="5, 5, 5, 5">
+            <TextBox.Text>
+                <Binding Path="Hour" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <val:ValidateHour/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding [0].ErrorContent}" Foreground="{DynamicResource OppositeColor}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+        <TextBlock Style="{DynamicResource TextBlock}" Grid.Row="6" FontWeight="Bold" Grid.Column="4" Margin="-2, 5, 5, 5">:</TextBlock>
+        <TextBox Style="{DynamicResource TextBox}" x:Name="appointmentStartMinute" Grid.Row="6" Grid.Column="4" Margin="5, 5, 5, 5">
+            <TextBox.Text>
+                <Binding Path="Minute" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <val:ValidateMinute/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding [0].ErrorContent}" Foreground="{DynamicResource OppositeColor}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+
+        <TextBlock Style="{DynamicResource TextBlock}" Text="{DynamicResource StrAppointmentLenght}" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" Margin="5, 5, 5, 5"></TextBlock>
+        <TextBox Style="{DynamicResource TextBox}" x:Name="appointmentLenghtMinute" Grid.Row="7" Grid.Column="4" Margin="5, 5, 5, 5">
+            <TextBox.Text>
+                <Binding Path="LenMinute" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <val:ValidateMinute/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding [0].ErrorContent}" Foreground="{DynamicResource OppositeColor}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+        <CheckBox Style="{DynamicResource CheckBox}" Content="{DynamicResource StrEmergency}" x:Name="EmergencyCheckBox" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"></CheckBox>
+
+        <Button Style="{DynamicResource Button}" x:Name="ConfirmButton"  Grid.Row="9" Grid.RowSpan="2" Grid.Column="6" Grid.ColumnSpan="4" Margin="5, 5, 5, 5" Click="ConfirmButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image HorizontalAlignment="Right" Margin="1, 1, 1, 1" Source="/Resources/Images/refer.png" Height="20" Width="20"></Image>
+                <TextBlock Text="{DynamicResource StrReferPatient}" HorizontalAlignment="Left" Margin="1, 1, 1, 1"></TextBlock>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Page>

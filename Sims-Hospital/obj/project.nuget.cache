@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "dgSpecHash": "BLFdLQObtJf0udzcl4r+xgNSwt7zYRuFhM9olj7wRKyfsQNV9CJLTIAyC9EzxMX4BQGTbJ+8B/xwIZVXka042w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mihaj\\Desktop\\sims_clone\\Bolnica-SIMS\\src\\Sims-Hospital\\Sims-Hospital\\Sims-Hospital.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mihaj\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
+    "C:\\Users\\mihaj\\.nuget\\packages\\itextsharp\\5.5.13.3\\itextsharp.5.5.13.3.nupkg.sha512",
+    "C:\\Users\\mihaj\\.nuget\\packages\\materialdesigncolors\\2.0.6\\materialdesigncolors.2.0.6.nupkg.sha512",
+    "C:\\Users\\mihaj\\.nuget\\packages\\materialdesignthemes\\4.5.0\\materialdesignthemes.4.5.0.nupkg.sha512",
+    "C:\\Users\\mihaj\\.nuget\\packages\\syncfusion.licensing\\18.3.0.53\\syncfusion.licensing.18.3.0.53.nupkg.sha512",
+    "C:\\Users\\mihaj\\.nuget\\packages\\syncfusion.sfradialmenu.wpf\\18.3.0.53\\syncfusion.sfradialmenu.wpf.18.3.0.53.nupkg.sha512",
+    "C:\\Users\\mihaj\\.nuget\\packages\\syncfusion.sfschedule.wpf\\18.3.0.53\\syncfusion.sfschedule.wpf.18.3.0.53.nupkg.sha512",
+    "C:\\Users\\mihaj\\.nuget\\packages\\syncfusion.sfshared.wpf\\18.3.0.53\\syncfusion.sfshared.wpf.18.3.0.53.nupkg.sha512",
+    "C:\\Users\\mihaj\\.nuget\\packages\\syncfusion.shared.wpf\\18.3.0.53\\syncfusion.shared.wpf.18.3.0.53.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BouncyCastle 1.8.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'iTextSharp 5.5.13.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "iTextSharp",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    }
+  ]
+}

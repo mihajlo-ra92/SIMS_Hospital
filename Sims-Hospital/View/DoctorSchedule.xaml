@@ -1,0 +1,40 @@
+﻿<Window x:Class="Sims_Hospital.View.DoctorSchedule"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sims_Hospital.View"
+        mc:Ignorable="d"
+        Title="DoctorSchedule" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Bolnica &quot;Zdravo&quot;" HorizontalAlignment="Center" Margin="0, 0, 0, 0"  Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+
+        <DataGrid Name="CustomerGrid" ItemsSource="{Binding}" AlternatingRowBackground="Green" Grid.Row="1" AlternationCount="2" Grid.ColumnSpan="4" Margin="73,10,73,138" Grid.RowSpan="8">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" />
+                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
+                <DataGridTextColumn Header="Username" Binding="{Binding Username}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Click="ShowMedicalCard_Click" Margin="200,292,73,90" Grid.Row="8" Grid.Column="3">Uvid u pacijenta</Button>
+    </Grid>
+</Window>

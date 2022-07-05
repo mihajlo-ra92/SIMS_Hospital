@@ -1,0 +1,39 @@
+﻿<Window x:Class="Sims_Hospital.View.RecommendationTimePriority"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sims_Hospital.View"
+        mc:Ignorable="d"
+        Title="RecommendationTimePriority" Height="300" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Bolnica &quot;Zdravo&quot;" HorizontalAlignment="Center" Margin="0, 0, 0, 0"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>
+        <Button x:Name="logoutUser" Grid.Column="4" Grid.Row="0" MaxWidth="100" Click="LogoutUser_Click">Odjava</Button>
+        <ListBox x:Name="doctorList" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="0 10 0 0" MouseDoubleClick="DoctorList_MouseDoubleClick">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="{Binding Path=NameLastName}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>
