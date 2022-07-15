@@ -25,3 +25,6 @@ Home page:
 Booking a appointment:
 
 ![zdravo_book](https://user-images.githubusercontent.com/94182463/177381669-93e7bc94-2a44-4e41-8943-ad939405244e.jpg)
+
+
+TODO: Clean up code
